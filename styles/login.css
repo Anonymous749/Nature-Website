@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background: url('./../images/5.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 40px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px);
+  width: 90%;
+  max-width: 400px;
+  color: #fff;
+}
+
+.login-header h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.login-form input {
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 6px;
+  background: #f0f0f040;
+  color: white;
+  font-size: 1rem;
+}
+.login-form input::placeholder {
+  color: #ccc;
+}
+
+.login-form input:focus {
+  outline: 2px solid white;
+  background: #ffffff30;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  min-height: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #333;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.register {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.register a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+

@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background: url('./../images/6.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.31);
+  backdrop-filter: blur(3px);
+}
+
+.navstart {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.li {
+  list-style: none;
+}
+
+/* Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navlinks */
+.navend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navlinks {
+  display: flex;
+  gap: 20px;
+}
+
+.navlinks li {
+  list-style: none;
+}
+
+.navlinks li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navlinks li a:hover {
+  color: #ababab;
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Login Button */
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.login .login-link {
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 2px solid white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.login .login-link:hover {
+  background-color: #ababab;
+  color: black;
+  transition: all 0.6s ease-in-out;
+}
+
+/* === SECTION === */
+.section1 {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto auto;
+  min-height: 400px;
+  max-height: 500px;
+  min-width: 40vw;
+  max-width: 60vw;
+  margin: 50px auto;
+  background-color: rgba(0, 0, 0, 0.361);
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.section1 .s1,
+.section1 .s2 {
+  padding: 20px;
+}
+
+.section1 .s1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1;
+}
+
+.section1 .s1 h1 {
+  font-size: 2rem;
+  color: white;
+  font-weight: bolder;
+}
+
+.section1 .s2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 2;
+}
+
+.section1 .s2 p {
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 1.5;
+  color: white;
+  max-width: 500px;
+}
+
+.section1 .s3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  grid-column: span 2;
+}
+
+.section1 .s3 li {
+  list-style-type: none;
+}
+
+.section1 .s3 li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 2px solid white;
+}
+
+.section1 .s3 li a:hover {
+  background-color: #ababab;
+  color: black;
+  transition: all 0.6s ease-in-out;
+}
+header.navbar {
+  position: relative;
+  z-index: 999;
+}
+
+.navlinks li a,
+.login .login-link {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Optional glassmorphism effect */
+.section1 {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* === RESPONSIVE NAV === */
+@media (max-width: 900px) {
+ .navbar {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+  .menu-icon {
+    display: block;
+    margin-left: auto;
+    z-index: 1001;
+  }
+
+ .navend {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .navlinks {
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+
+.navlinks.show {
+  max-height: 500px; /* Enough to fit all links */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+  .navlinks li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+
+  }
+   .section1 {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    max-width: 100%;
+    overflow-y: scroll;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .section1 .s1,
+  .section1 .s2,
+  .section1 .s3 {
+    order: unset;
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .section1 .s1 h1 {
+    font-size: 1.8rem;
+  }
+
+  .section1 .s2 p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .section1 .s3 li a {
+    font-size: 1.1rem;
+    padding: 10px 25px;
+  }
+
+  .navlinks li a.login-link {
+  padding: 10px;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  border: 1px solid whitesmoke;
+  /* background-color: grey; */
+}
+
+.navlinks li a.login-link:hover {
+  /* color: #ababab; */
+  background-color:#ababab ;
+  text-decoration: underline;
+  background: none;
+}
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* vertical scrollbar width */
+  height: 10px; /* horizontal scrollbar height */
+}
+
+/* Track (the empty space behind the thumb) */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* Thumb (the part you drag) */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.3s ease;
+}
+
+/* Hover effect for thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}

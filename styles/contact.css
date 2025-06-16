@@ -1,0 +1,286 @@
+/* Base Reset */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    font-family: 'Oswald', sans-serif;
+    background: url('./../images/2.jpg') no-repeat ;
+    background-size: cover;
+    line-height: 1.6;
+    /* color: #333; */
+    color: #2b3e2f;
+}
+
+/* Header */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.31);
+  backdrop-filter: blur(3px);
+}
+
+.navstart {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.li {
+  list-style: none;
+}
+
+/* Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navlinks */
+.navend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navlinks {
+  display: flex;
+  gap: 20px;
+}
+
+.navlinks li {
+  list-style: none;
+}
+
+.navlinks li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navlinks li a:hover {
+  color: #ababab;
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Login Button */
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.login .login-link {
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 2px solid white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.login .login-link:hover {
+  background-color: #ababab;
+  color: black;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Content */
+.cont{
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.contact-page {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 30px 20px;
+  /* transform: translate(); */
+  color: #f0f0f0;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.contact-page h1, .contact-page h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.contact-details p, .privacy-section p, .mission-section p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.business-hours ul {
+  list-style: none;
+  padding: 0;
+}
+
+.business-hours li {
+  margin-bottom: 6px;
+}
+
+.map-placeholder {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+
+/* Footer */
+.footer {
+  background: #22543d5b;
+  color: white;
+  backdrop-filter: blur(3px);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+
+
+  .header nav a {
+    margin: 5px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+ 
+}
+
+/* === RESPONSIVE NAV === */
+@media (max-width: 900px) {
+ .navbar {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+  .menu-icon {
+    display: block;
+    margin-left: auto;
+    z-index: 1001;
+  }
+
+ .navend {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .navlinks {
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+
+.navlinks.show {
+  max-height: 500px; /* Enough to fit all links */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+  .navlinks li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+
+  }
+  
+
+  .navlinks li a.login-link {
+  padding: 10px;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  border: 1px solid whitesmoke
+  /* background-color: grey; */
+}
+
+.navlinks li a.login-link:hover {
+  color: #ababab;
+  text-decoration: underline;
+  background: none;
+}
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* vertical scrollbar width */
+  height: 10px; /* horizontal scrollbar height */
+  display: none;
+}
+
+/* Track (the empty space behind the thumb) */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+/* Thumb (the part you drag) */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.3s ease;
+}
+
+/* Hover effect for thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
